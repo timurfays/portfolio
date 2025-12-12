@@ -34,6 +34,10 @@ title: A S (timurfays@gmail.com)| Портфолио
   h2 { border-bottom: 3px solid #3498db; padding-bottom: 5px; display: inline-block; margin-top: 0; color: #2c3e50; }
   h3 { margin-bottom: 10px; color: #34495e; margin-top: 25px;}
   p { margin-bottom: 15px; }
+  
+  /* Списки внутри деталей */
+  ul.doc-list { margin: 0; padding-left: 20px; }
+  ul.doc-list li { margin-bottom: 5px; }
 
   /* 4. Шапка */
   .profile-header { text-align: center; margin-bottom: 40px; }
@@ -63,8 +67,9 @@ title: A S (timurfays@gmail.com)| Портфолио
   .gallery-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
   
   .gallery-item {
-    height: 300px; border-radius: 8px; border: 1px solid #eee;
+    height: 250px; border-radius: 8px; border: 1px solid #eee;
     flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    object-fit: cover;
   }
 
   /* 7. Скрытые блоки (Details) */
@@ -77,6 +82,11 @@ title: A S (timurfays@gmail.com)| Портфолио
     margin-top: 10px; padding-left: 15px;
     border-left: 3px solid #007bff; font-size: 0.95em; color: #495057;
   }
+  .story-content {
+    margin-top: 10px; padding-left: 15px;
+    border-left: 3px solid #e67e22; font-size: 0.95em; color: #495057; font-style: italic;
+  }
+  summary.story-summary { color: #d35400; }
 
   /* 8. Iframe */
   .iframe-box {
@@ -109,11 +119,12 @@ title: A S (timurfays@gmail.com)| Портфолио
 
   <!-- ШАПКА -->
   <div class="profile-header">
-    <img src="assets/avatar.jpg" class="avatar" alt="Тимур Файз">
+    <img src="assets/avatar.jpg" class="avatar" alt="A S">
     <h1>A S (timurfays@gmail.com)</h1>
     <p style="color: #666; font-size: 1.1em;">C++ programmer | Researcher</p>
     <p style="max-width: 700px; margin: 0 auto; color: #555;">
-      Инженер-исследователь. Сочетаю фундаментальную базу алгоритмов с современными практиками Big Data (EtLT).
+      Инженер-исследователь с нетривиальным академическим путем. 
+      Сочетаю школу алгоритмов МФТИ с практическим опытом построения Big Data систем.
     </p>
   </div>
 
@@ -138,15 +149,26 @@ title: A S (timurfays@gmail.com)| Портфолио
   <!-- ОБРАЗОВАНИЕ -->
   <div class="card">
     <h2>🎓 Академический путь</h2>
-    <p>Моя образовательная траектория включает углубленную подготовку в двух ведущих вузах.</p>
+    <p>Моя траектория обучения — это поиск наиболее сильных инженерных школ и преодоление жизненных обстоятельств.</p>
 
     <!-- МФТИ -->
     <div style="margin-bottom: 30px;">
       <h3 style="margin-top: 0;">МФТИ (Московский физико-технический институт)</h3>
-      <p style="font-size: 0.9em; color: #666;">Фундаментальная информатика | 4 семестра</p>
+      <p style="font-size: 0.9em; color: #666;">Факультет: ФИВТ / ФПМИ (уточни свой) | 4 семестра</p>
+      
+      <details>
+        <summary class="story-summary">📖 Моя история: Путь в Долгопрудный</summary>
+        <div class="story-content">
+          <p>Я приехал поступать в лучший технический вуз России из небольшого села в Таджикистане. Это был колоссальный скачок сложности. 
+          МФТИ стал для меня школой выживания: там я получил базу по C++ и математике, которую невозможно получить на обычных онлайн-курсах. 
+          Это сформировало мое инженерное мышление: "разбираться до байта".</p>
+        </div>
+      </details>
+
       <p>
-        Глубокое погружение в архитектуру ЭВМ, низкоуровневое программирование и математический анализ.
+        <b>Ключевые дисциплины:</b> Алгоритмы и структуры данных, Технологии программирования (C++, Patterns), Математический анализ, Линейная алгебра, Дискретная математика.
       </p>
+      
       <!-- Галерея МФТИ -->
       <p><i>📸 Атмосфера обучения:</i></p>
       <div class="gallery-scroll">
@@ -161,17 +183,22 @@ title: A S (timurfays@gmail.com)| Портфолио
         <img src="assets/mipt_dorm (2).jpg" class="gallery-item" alt="Учеба">
 
       </div>
-    </div>
 
     <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
     <!-- СПбГУ -->
     <div>
       <h3 style="margin-top: 0;">Санкт-Петербургский Государственный Университет (СПбГУ)</h3>
-      <p style="font-size: 0.9em; color: #666;">Прикладная математика, программирование и ИИ | Перевод</p>
-      <p>
-        Специализация на анализе данных, распределенных системах и искусственном интеллекте.
-      </p>
+      <p style="font-size: 0.9em; color: #666;">Направление: Прикладная математика, программирование и ИИ | Перевод</p>
+      
+      <details>
+        <summary class="story-summary">📖 Моя история: Перевод и Практика</summary>
+        <div class="story-content">
+          <p>По личным обстоятельствам я перевелся в СПбГУ. Здесь фокус сместился с "чистой науки" на прикладные задачи: анализ данных, искусственный интеллект и распределенные системы. 
+          Впоследствии, из-за семейных обстоятельств, я был вынужден прервать обучение (отчисление по собственному желанию), но продолжил развивать свои навыки через проектную деятельность.</p>
+        </div>
+      </details>
+
       <!-- Галерея СПбГУ -->
       <p><i>📸 Учебный процесс:</i></p>
       <div class="gallery-scroll">
@@ -182,50 +209,62 @@ title: A S (timurfays@gmail.com)| Портфолио
       </div>
     </div>
 
-    <!-- Кнопка справок -->
-    <div class="btn-container" style="justify-content: center;">
-      <a href="ССЫЛКА_НА_ПАПКУ_СО_СПРАВКАМИ" class="btn btn-docs">
-        📂 Академические справки (Transcripts)
-      </a>
-    </div>
+
   </div>
+</div>
 
   <!-- ================= ПРОЕКТЫ ================= -->
 
-  <!--* 1. SFML PROJECT (C++) -->
+  <!-- 1. SFML PROJECT (C++) -->
   <div class="card">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-      <h2 style="margin-top:0;">🏛 Проект: Визуализация Алгоритмов</h2>
-      <span style="font-size:0.9em; color:#666;">C++ • SFML • Patterns</span>
+      <h2 style="margin-top:0;">🏛 Проект: Graph Visualization Framework</h2>
+      <span style="font-size:0.9em; color:#666;">C++ • SFML • Design Patterns</span>
     </div>
 
     <p>
-      <b>Самостоятельный проект в период изучения алгоритмов.</b><br>
-      Вместо стандартного решения задач, я разработал графический движок для визуализации работы алгоритма Дейкстры. 
-      Это позволило "увидеть" математику.
+      <b>Разработка графической библиотеки для визуализации алгоритмов на графах (Johnson's Algorithm / APSP).</b><br>
+      Вместо использования готовых решений, я спроектировал собственный движок рендеринга. Проект демонстрирует работу с памятью (smart pointers), шаблонами и архитектурными паттернами.
     </p>
 
     <details>
-      <summary>📄 Детали реализации (Архитектура)</summary>
+      <summary class="story-summary">📖 История: Проблема интерпретации данных (APSP)</summary>
+      <div class="story-content">
+        <p>
+          В университете дали задачу: реализовать <b>алгоритм Джонсона</b> (поиск кратчайших путей между всеми парами вершин). Стандартное решение — вывод матрицы $V \times V$ в консоль. 
+          Я понял, что это инженерный тупик: в потоке тысяч чисел невозможно быстро найти путь от конкретной точки А к точке Б. Данные есть, а информации — нет.<br>
+          Я решил проблему, написав GUI-интерфейс. Пользователь выбирает вершины мышкой, а система визуализирует путь, извлекая его из предрасчитанных данных. Это превратило "сухую лабу" в рабочий инструмент.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>📄 Архитектура и Технические детали</summary>
       <div class="doc-content">
-        <p>Использованы поведенческие паттерны проектирования для гибкой смены алгоритмов поиска пути без переписывания кода визуализации. Реализована работа с графами любой сложности.</p>
+        <p><b>Архитектура:</b> Реализовано строгое разделение логики графа и его отрисовки (Separation of Concerns).</p>
+        <ul class="doc-list">
+          <li><b>Core:</b> Граф хранится в виде списков смежности (оптимизация памяти для разреженных графов).</li>
+          <li><b>VizController & Layers:</b> Система слоев позволяет накладывать результаты алгоритмов (например, подсвеченный путь) поверх основного графа без изменения его структуры.</li>
+          <li><b>Memory Management:</b> Активное использование <code>std::unique_ptr</code> для автоматического управления временем жизни объектов визуализации.</li>
+          <li><b>Interfaces:</b> Базовый класс <code>Drawable</code> обеспечивает полиморфизм для всех рендеримых объектов.</li>
+        </ul>
       </div>
     </details>
 
     <p><i>📸 Демонстрация работы:</i></p>
     <div class="gallery-scroll">
       <img src="assets/sfml_demo.gif" class="gallery-item" alt="GIF Demo">
-      <!-- <img src="assets/sfml_ui.png" class="gallery-item" alt="Interface"> -->
+      <!-- Добавь скрин кода или UML диаграмму, если есть -->
     </div>
 
     <div class="btn-container">
-      <a href="ССЫЛКА_НА_GITHUB_SFML" class="btn btn-github">
+      <a href="https://github.com/timurfays/cpp-sfml-test" class="btn btn-github">
         🐙 Открыть на GitHub
       </a>
     </div>
   </div>
 
-  <!--* 2. КУРСОВАЯ 1 (Теория) -->
+  <!-- 2. КУРСОВАЯ 1 (Теория) -->
   <div class="card">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2 style="margin-top:0;">📑 Курсовая работа №1</h2>
@@ -234,7 +273,7 @@ title: A S (timurfays@gmail.com)| Портфолио
 
     <p>
       <b>Тема: "Сравнительные характеристики ETL и ELT при обработке больших данных".</b><br>
-      Фундаментальное исследование подходов к обработке данных. Работа была высоко оценена комиссией СПбГУ (Оценка: Отлично/A).
+      Фундаментальное исследование архитектурных подходов. Работа систематизирует знания о пайплайнах данных и была высоко оценена комиссией СПбГУ (Оценка: Отлично/A).
     </p>
 
     <details>
@@ -247,95 +286,112 @@ title: A S (timurfays@gmail.com)| Портфолио
       </div>
     </details>
 
-    <p><i>📸 Галерея:</i></p>
+    <p><i>📸 Материалы работы:</i></p>
     <div class="gallery-scroll">
-      <img src="assets/aw_1.png" class="gallery-item" alt="СПбГУ Здание">
-      <img src="assets/aw_2.png" class="gallery-item" alt="Аудитория">
+      <img src="assets/aw_1.png" class="gallery-item" alt="Схема 1">
+      <img src="assets/aw_2.png" class="gallery-item" alt="Схема 2">
     </div>
 
     <div class="btn-container">
-      <a href="ССЫЛКА_НА_ЯНДЕКС_ДИСК_КУРСОВАЯ_1" class="btn btn-yandex">
+      <a href="https://disk.360.yandex.ru/i/HfIcFGPn38ui6Q" class="btn btn-yandex">
         ☁️ Читать на Яндекс.Диске
       </a>
     </div>
   </div>
 
-  <!--* 3. КУРСОВАЯ 2 (Практическая) -->
+  <!-- 3. КУРСОВАЯ 2 (Практическая) -->
   <div class="card">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2 style="margin-top:0;">📑 Курсовая работа №2</h2>
-      <span style="font-size:0.9em; color:#666;">Theory • Research • Grade: A</span>
+      <span style="font-size:0.9em; color:#666;">Applied Research • Cloud • EtLT</span>
     </div>
 
     <p>
-      <b>Тема: "Сравнительные характеристики современных языков программирования, применяемых в процессе анализа больших данных".</b><br>
-      Практическое исследование подходов обработки данных с предыдущей работы [Курсовая №1]  
+      <b>Тема: "Практическая реализация ETL/ELT-конвейеров и оценка российских облачных платформ".</b><br>
+      Прикладное исследование. Логическое продолжение теоретической работы.
     </p>
 
     <details>
-      <summary>📄 Аннотация работы</summary>
+      <summary>📄 Аннотация и Задачи</summary>
       <div class="doc-content">
-        <p>
-          Цель исследования — продемонстрировать практическую реализацию гибридного подхода EtLT (Extract → light‑Transform → Load → heavy‑Transform) на асбтрактном примере финтех‑стартапа «FinBest» и провести всестороннюю оценку существующих российских облачных платформ для построения ETL/ELT‑конвейеров. В работе решены следующие задачи:
-Описана архитектура EtLT‑конвейера с учётом требований ФЗ‑152 (персональные данные) и ФЗ‑115 (AML/ПОД‑ФТ).
-Реализован комплексный pipeline на базе Apache Airflow, PostgreSQL и Apache Spark с маскированием PII, расчётом ключевых метрик и анализом транзакционного графа.
-Проведён сравнительный анализ ключевых российских облачных провайдеров (Yandex Cloud, Cloud.ru, VK Cloud Solutions, MTS Web Services, Selectel) по технологической зрелости, совместимости с open‑source, стоимости и перспективам.
-Рассмотрено влияние современных практик DataOps, Data Mesh и серверлес‑архитектур на выбор между ETL и ELT в российских реалиях.
-Настоящая работа продолжает исследование, начатое в моей курсовой работе «Сравнительные характеристики и архитектурные особенности ETL и ELT при обработке больших данных» ([Султонов А. Ш.], 2025), и фокусируется на практической реализации EtLT-конвейера.
-        </p>
+        <p><b>Цель:</b> Продемонстрировать реализацию гибридного подхода <b>EtLT</b> на примере финтех-стартапа «FinBest».</p>
+        <ul class="doc-list">
+          <li>Описана архитектура с учётом требований <b>ФЗ‑152</b> и <b>ФЗ‑115</b>.</li>
+          <li>Спроектирован pipeline: <b>Airflow + PostgreSQL + Spark</b>.</li>
+          <li>Проведен сравнительный анализ российских облаков (Yandex, VK, MTS).</li>
+        </ul>
       </div>
     </details>
 
-    <p><i>📸 Галерея:</i></p>
+    <p><i>📸 Иллюстрации из работы:</i></p>
     <div class="gallery-scroll">
-      <img src="assets/aw2_1.png" class="gallery-item" alt="СПбГУ Здание">
-      <img src="assets/aw2_2.png" class="gallery-item" alt="Аудитория">
-      <img src="assets/aw2_3.png" class="gallery-item" alt="Аудитория">
+      <img src="assets/aw2_1.png" class="gallery-item" alt="Архитектура">
+      <img src="assets/aw2_2.png" class="gallery-item" alt="Схема">
+      <img src="assets/aw2_3.png" class="gallery-item" alt="Диаграмма">
     </div>    
 
     <div class="btn-container">
-      <a href="ССЫЛКА_НА_ЯНДЕКС_ДИСК_КУРСОВАЯ_1" class="btn btn-yandex">
+      <a href="https://disk.360.yandex.ru/i/kHNRbI5PNM4bOg" class="btn btn-yandex">
         ☁️ Читать на Яндекс.Диске
       </a>
     </div>
   </div>
   
 
-  <!-- 3. FINBEST (Практика + Курсовая 2) -->
+  <!-- 4. FINBEST (Реализация) -->
   <div class="card">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2 style="margin-top:0;">🚀 Проект: FinBest</h2>
-      <span style="font-size:0.9em; color:#666;">EtLT • Airflow • Spark</span>
+      <span style="font-size:0.9em; color:#666;">EtLT • Airflow • Spark • GraphFrames</span>
     </div>
 
     <p>
-      <b>Практическая реализация Курсовой работы №2.</b><br>
-      Полноценный EtLT-конвейер для финтех-стартапа. Проект решает реальные бизнес-задачи: соблюдение ФЗ-152 (маскирование) и ФЗ-115 (поиск мошенников через графы).
+      <b>Техническая реализация Курсовой работы №2.</b><br>
+      Полноценная платформа для анализа финансовых транзакций, развернутая в Docker. 
+      Реализует полный цикл обработки данных: от сырых CSV до интерактивных дашбордов и графовой аналитики.
     </p>
 
-    <!-- Выдержка из курсовой -->
     <details>
-      <summary>📄 Описание из Курсовой работы (Цель и Задачи)</summary>
+      <summary class="story-summary">📖 История проекта: От теории к практике</summary>
+      <div class="story-content">
+        <p>Я не хотел писать очередную курсовую "в стол". Мне было важно создать работающий прототип. 
+        FinBest эмулирует реальную среду финтех-компании: потоки транзакций, необходимость скрывать данные (маскирование) и искать мошенников (ФЗ-115). 
+        Здесь я применил знания графовых алгоритмов (из проекта на C++) к Big Data стеку (Spark GraphFrames).</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>📄 Технический стек и Компоненты</summary>
       <div class="doc-content">
-        <p><b>Цель:</b> Продемонстрировать практическую реализацию гибридного подхода EtLT на российских облачных платформах.</p>
-        <p><b>Реализация:</b> Разработан пайплайн, где персональные данные обезличиваются до загрузки в облако, а аналитика проводится внутри DWH с помощью Spark и dbt.</p>
+        <p><b>ETL & Orchestration (Airflow):</b></p>
+        <ul class="doc-list">
+          <li><code>mask_pii.py</code>: Маскирование персональных данных (SHA-256) до загрузки в DWH (соблюдение ФЗ-152).</li>
+          <li><code>transform.py</code>: Запуск dbt-моделей и Spark-джобов.</li>
+        </ul>
+        <p><b>Analytics & Fraud Detection (Spark):</b></p>
+        <ul class="doc-list">
+          <li><code>build_graph.py</code>: Построение графа транзакций, расчет PageRank и поиск сообществ (Louvain).</li>
+          <li><code>detect_suspicious.py</code>: Выявление аномалий (ФЗ-115) на основе правил и графовых метрик.</li>
+        </ul>
+        <p><b>Data Modeling (dbt):</b> Построение витрин данных (слои staging, intermediate, mart) внутри PostgreSQL.</p>
+        <p><b>Visualization:</b> Автоматическая генерация дашбордов в <b>Superset</b> и Ad-Hoc анализ в <b>Jupyter</b>.</p>
       </div>
     </details>
 
     <!-- Галерея -->
-    <p><i>📸 Галерея реализации (Airflow, Superset, Архитектура):</i></p>
+    <p><i>📸 Галерея реализации:</i></p>
     <div class="gallery-scroll">
       <img src="assets/finbest.png" class="gallery-item" alt="Схема">
-      <img src="assets/finbest_2.png " class="gallery-item" alt="Airflow">
-      <img src="assets/finbest_3.png " class="gallery-item" alt="Superset">
-      <img src="assets/finbest_4.png " class="gallery-item" alt="Граф">
-      <img src="assets/finbest_5.gif " class="gallery-item" alt="Граф">
-      <img src="assets/finbest_6.png " class="gallery-item" alt="Граф">
+      <img src="assets/finbest_2.png" class="gallery-item" alt="Airflow DAG">
+      <img src="assets/finbest_3.png" class="gallery-item" alt="Superset">
+      <img src="assets/finbest_4.png" class="gallery-item" alt="Граф статический">
+      <img src="assets/finbest_5.gif" class="gallery-item" alt="Граф анимация">
+      <img src="assets/finbest_6.png" class="gallery-item" alt="Граф анализ">
     </div>
 
     <!-- Граф -->
     <h3>🕸 Интерактивный граф (Pyvis)</h3>
-    <p>Результат работы алгоритма кластеризации клиентов. Узлы можно перетаскивать.</p>
+    <p>Результат работы алгоритма кластеризации клиентов. Узлы можно перетаскивать для анализа связей.</p>
     <div class="iframe-box" style="height: 500px;">
       <iframe src="html_exports/client_graph_top5_pyvis.html" width="100%" height="100%" style="border:none;"></iframe>
     </div>
@@ -353,11 +409,9 @@ title: A S (timurfays@gmail.com)| Портфолио
       <a href="https://github.com/timurfays/FinBest" class="btn btn-github">
         🐙 Открыть код на GitHub
       </a>
-      <a href="ССЫЛКА_НА_ЯНДЕКС_ДИСК_КУРСОВАЯ_2" class="btn btn-yandex">
-        ☁️ Читать Курсовую №2 (PDF)
-      </a>
     </div>
   </div>
+
 
   <!-- ПОДВАЛ -->
   <div style="text-align:center; margin-top:50px; color:#999; font-size:0.9em;">
