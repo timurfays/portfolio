@@ -5,11 +5,11 @@ title: Тимур Файз | Портфолио
 
 <!-- ==================== СТИЛИ (CSS) ==================== -->
 <style>
-  /* Общие настройки */
+  /* 1. Основа */
   body {
-    background-color: #f4f6f8;
+    background-color: #f0f2f5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #2c3e50;
+    color: #1c1e21;
     line-height: 1.6;
     margin: 0; padding: 0;
   }
@@ -19,244 +19,289 @@ title: Тимур Файз | Портфолио
     padding: 40px 20px;
   }
 
-  /* Типографика */
-  h1 { font-size: 2.2em; margin-bottom: 0.2em; color: #1a202c; }
-  h2 { border-bottom: 2px solid #3182ce; padding-bottom: 5px; display: inline-block; margin-top: 0; }
-  h3 { margin-bottom: 10px; color: #2d3748; }
-  
-  /* Карточки */
+  /* 2. Карточки */
   .card {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 30px;
     margin-bottom: 30px;
+    border: 1px solid #ddd;
   }
 
-  /* Шапка профиля */
+  /* 3. Типографика */
+  h1 { font-size: 2.4em; margin-bottom: 0.2em; color: #2c3e50; }
+  h2 { border-bottom: 3px solid #3498db; padding-bottom: 5px; display: inline-block; margin-top: 0; color: #2c3e50; }
+  h3 { margin-bottom: 10px; color: #34495e; margin-top: 25px;}
+  p { margin-bottom: 15px; }
+
+  /* 4. Шапка */
   .profile-header { text-align: center; margin-bottom: 40px; }
   .avatar {
     width: 180px; height: 180px; object-fit: cover;
     border-radius: 50%; border: 5px solid #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   }
-  .bio-text { font-size: 1.1em; color: #4a5568; max-width: 700px; margin: 10px auto; }
 
-  /* Навыки (Badges) */
+  /* 5. Навыки (Badges) */
   .tech-badge {
     display: inline-block;
-    background-color: #ebf8ff; color: #2b6cb0;
-    border: 1px solid #bee3f8;
-    padding: 4px 10px; border-radius: 15px;
-    font-size: 0.85em; font-weight: 600;
-    margin: 0 5px 5px 0;
+    background-color: #e8f4f8; color: #2980b9;
+    padding: 5px 12px; border-radius: 20px;
+    font-size: 0.9em; font-weight: 600;
+    margin: 0 5px 5px 0; border: 1px solid #bce0fd;
   }
-  .tech-badge.core { background-color: #e6fffa; color: #234e52; border-color: #b2f5ea; } /* Зеленые для базы */
+  .tech-badge.core { background-color: #2c3e50; color: #fff; border: none; }
 
-  /* Галерея (Скролл) */
+  /* 6. Галерея (Горизонтальный скролл) */
   .gallery-scroll {
     display: flex; overflow-x: auto; gap: 15px; padding: 10px 0;
     scrollbar-width: thin;
+    margin-bottom: 15px;
   }
+  .gallery-scroll::-webkit-scrollbar { height: 6px; }
+  .gallery-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+  
   .gallery-item {
-    height: 200px; border-radius: 6px; border: 1px solid #cbd5e0;
-    flex-shrink: 0;
+    height: 180px; border-radius: 8px; border: 1px solid #eee;
+    flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
-  /* Сворачиваемые блоки */
+  /* 7. Скрытые блоки (Details) */
   details {
-    background: #f7fafc; border: 1px solid #edf2f7;
+    background: #f8f9fa; border: 1px solid #e9ecef;
     border-radius: 8px; padding: 12px; margin: 15px 0;
   }
-  summary { font-weight: 600; color: #3182ce; cursor: pointer; }
+  summary { font-weight: 600; color: #007bff; cursor: pointer; outline: none; }
   .doc-content {
     margin-top: 10px; padding-left: 15px;
-    border-left: 3px solid #3182ce; font-size: 0.95em; color: #4a5568;
+    border-left: 3px solid #007bff; font-size: 0.95em; color: #495057;
   }
 
-  /* Iframe контейнер */
+  /* 8. Iframe */
   .iframe-box {
     border: 1px solid #e2e8f0; border-radius: 8px;
     overflow: hidden; background: white; margin-top: 15px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
   }
 
-  /* Кнопки */
+  /* 9. Кнопки (Брендовые) */
+  .btn-container { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  
   .btn {
-    display: inline-block; padding: 8px 16px;
-    border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9em;
-    transition: background 0.2s;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 10px 20px; border-radius: 6px; text-decoration: none;
+    font-weight: 600; font-size: 0.95em; transition: opacity 0.2s;
+    color: white !important;
   }
-  .btn-primary { background: #3182ce; color: white !important; }
-  .btn-primary:hover { background: #2b6cb0; }
-  .btn-outline { border: 1px solid #3182ce; color: #3182ce !important; }
-  .btn-outline:hover { background: #ebf8ff; }
+  .btn:hover { opacity: 0.9; }
+  
+  /* Стиль GitHub */
+  .btn-github { background-color: #24292e; }
+  /* Стиль Яндекс.Диск (Желтый/Оранжевый) */
+  .btn-yandex { background-color: #fc0; color: #000 !important; }
+  /* Стиль Справки (Нейтральный синий) */
+  .btn-docs { background-color: #3498db; }
 
-  /* Таймлайн образования */
-  .edu-item {
-    position: relative; padding-left: 20px; margin-bottom: 20px;
-    border-left: 2px solid #cbd5e0;
-  }
-  .edu-item::before {
-    content: ""; position: absolute; left: -6px; top: 5px;
-    width: 10px; height: 10px; border-radius: 50%; background: #3182ce;
-  }
 </style>
 
 <div class="container">
 
-  <!-- 1. ШАПКА -->
+  <!-- ШАПКА -->
   <div class="profile-header">
     <img src="assets/avatar.jpg" class="avatar" alt="Тимур Файз">
     <h1>Тимур Файз</h1>
-    <p style="color: #718096; font-weight: 500;">Data Engineer | Researcher</p>
-    <p class="bio-text">
-      Инженер-исследователь с фокусом на архитектуре данных и алгоритмах. 
-      Мой путь — это сочетание фундаментальной школы МФТИ и прикладного Data Engineering в СПбГУ.
+    <p style="color: #666; font-size: 1.1em;">Data Engineer | Researcher</p>
+    <p style="max-width: 700px; margin: 0 auto; color: #555;">
+      Инженер-исследователь. Сочетаю фундаментальную базу алгоритмов с современными практиками Big Data (EtLT).
     </p>
   </div>
 
-  <!-- 2. ТЕХНИЧЕСКИЙ СТЕК -->
+  <!-- ТЕХНИЧЕСКИЙ СТЕК -->
   <div class="card">
     <h3>🛠 Технический Арсенал</h3>
-    <div style="margin-bottom: 15px;">
+    <div>
       <span class="tech-badge core">C++ (STL)</span>
       <span class="tech-badge core">Python</span>
-      <span class="tech-badge core">SQL (PostgreSQL)</span>
-      <span class="tech-badge core">Algorithms & Data Structures</span>
-    </div>
-    <div>
+      <span class="tech-badge core">SQL</span>
       <span class="tech-badge">Apache Airflow</span>
       <span class="tech-badge">Apache Spark</span>
       <span class="tech-badge">dbt</span>
       <span class="tech-badge">Docker</span>
-      <span class="tech-badge">Git (CI/CD)</span>
-      <span class="tech-badge">Bash / Shell Scripting</span>
-      <span class="tech-badge">Design Patterns (GoF)</span>
-      <span class="tech-badge">SFML (Graphics)</span>
+      <span class="tech-badge">Git</span>
+      <span class="tech-badge">Bash / Shell</span>
+      <span class="tech-badge">Design Patterns</span>
+      <span class="tech-badge">SFML</span>
     </div>
   </div>
 
-  <!-- 3. ОБРАЗОВАНИЕ (Единая история) -->
+  <!-- ОБРАЗОВАНИЕ -->
   <div class="card">
     <h2>🎓 Академический путь</h2>
-    <p style="margin-bottom: 25px;">
-      Прошел углубленную программу подготовки в двух ведущих технических вузах страны. 
-      Имею подтвержденную базу (транскрипты) по ключевым инженерным дисциплинам.
-    </p>
+    <p>Моя образовательная траектория включает углубленную подготовку в двух ведущих вузах.</p>
 
     <!-- МФТИ -->
-    <div class="edu-item">
-      <h3 style="margin: 0;">МФТИ (Московский физико-технический институт)</h3>
-      <span style="font-size: 0.9em; color: #718096;">Фундаментальная информатика | <b>[Укажи кол-во семестров] семестров</b></span>
-      <p style="margin-top: 5px; font-size: 0.95em;">
-        <b>Ключевые дисциплины:</b> Алгоритмы и структуры данных, Архитектура ЭВМ, Углубленный C++, Линейная алгебра, Аналитическая геометрия.
-        <br><i>Акцент на низкоуровневом понимании работы вычислительных систем и паттернах проектирования.</i>
+    <div style="margin-bottom: 30px;">
+      <h3 style="margin-top: 0;">МФТИ (Московский физико-технический институт)</h3>
+      <p style="font-size: 0.9em; color: #666;">Фундаментальная информатика | 4 семестра</p>
+      <p>
+        Глубокое погружение в архитектуру ЭВМ, низкоуровневое программирование и математический анализ.
       </p>
+      <!-- Галерея МФТИ -->
+      <p><i>📸 Атмосфера обучения:</i></p>
+      <div class="gallery-scroll">
+        <img src="assets/mipt_1.jpg" class="gallery-item" alt="Кампус МФТИ">
+        <img src="assets/mipt_2.jpg" class="gallery-item" alt="Лекция">
+        <img src="assets/mipt_3.jpg" class="gallery-item" alt="Учеба">
+      </div>
     </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
     <!-- СПбГУ -->
-    <div class="edu-item">
-      <h3 style="margin: 0;">Санкт-Петербургский Государственный Университет (СПбГУ)</h3>
-      <span style="font-size: 0.9em; color: #718096;">Прикладная математика, программирование и ИИ | Перевод / Продолжение обучения</span>
-      <p style="margin-top: 5px; font-size: 0.95em;">
-        <b>Специализация:</b> Анализ больших данных (Big Data), Построение ETL-пайплайнов, Распределенные системы.
-        <br><i>Практическая реализация сложных инженерных проектов (см. FinBest).</i>
+    <div>
+      <h3 style="margin-top: 0;">Санкт-Петербургский Государственный Университет (СПбГУ)</h3>
+      <p style="font-size: 0.9em; color: #666;">Прикладная математика, программирование и ИИ | Перевод</p>
+      <p>
+        Специализация на анализе данных, распределенных системах и искусственном интеллекте.
       </p>
+      <!-- Галерея СПбГУ -->
+      <p><i>📸 Учебный процесс:</i></p>
+      <div class="gallery-scroll">
+        <img src="assets/spbu_1.jpg" class="gallery-item" alt="СПбГУ Здание">
+        <img src="assets/spbu_2.jpg" class="gallery-item" alt="Аудитория">
+      </div>
     </div>
 
-    <div style="margin-top: 25px;">
-      <a href="ССЫЛКА_НА_ПАПКУ_СО_СПРАВКАМИ" class="btn btn-outline">
-        📂 Посмотреть академические справки (Transcripts)
+    <!-- Кнопка справок -->
+    <div class="btn-container" style="justify-content: center;">
+      <a href="ССЫЛКА_НА_ПАПКУ_СО_СПРАВКАМИ" class="btn btn-docs">
+        📂 Академические справки (Transcripts)
       </a>
     </div>
   </div>
 
-  <!-- 4. ПРОЕКТ 1: FINBEST (Data Engineering) -->
+  <!-- ================= ПРОЕКТЫ ================= -->
+
+  <!-- 1. SFML PROJECT (C++) -->
   <div class="card">
-    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center;">
-      <h2 style="margin-top:0;">🚀 Проект: FinBest</h2>
-      <span style="font-size:0.9em; color:#718096;">EtLT Pipeline • Airflow • Spark</span>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="margin-top:0;">🏛 Проект: Визуализация Алгоритмов</h2>
+      <span style="font-size:0.9em; color:#666;">C++ • SFML • Patterns</span>
     </div>
-    
+
     <p>
-      <b>Практическая реализация EtLT-конвейера и графового анализа.</b><br>
-      Система для обработки финансовых транзакций, решающая проблему соблюдения ФЗ-152 (маскирование данных) и ФЗ-115 (поиск мошеннических схем) в облачной среде.
+      <b>Самостоятельный проект в период изучения алгоритмов.</b><br>
+      Вместо стандартного решения задач, я разработал графический движок для визуализации работы алгоритма Дейкстры. 
+      Это позволило "увидеть" математику.
     </p>
 
-    <!-- Выдержка из Документа -->
     <details>
-      <summary>📄 Цель и Архитектура (из Пояснительной записки)</summary>
+      <summary>📄 Детали реализации (Архитектура)</summary>
       <div class="doc-content">
-        <p><b>Проблема:</b> Необходимость безопасной обработки чувствительных данных в публичных облаках РФ.</p>
-        <p><b>Решение:</b> Гибридная архитектура. "Легкая" трансформация (маскирование PII) происходит до загрузки, "Тяжелая" аналитика (Spark) — внутри контура.</p>
-        <p><b>Стек:</b> Airflow (оркестрация), Pandas (Extract), Spark (Heavy Transform), dbt (Modeling), Superset (BI).</p>
+        <p>Использованы поведенческие паттерны проектирования для гибкой смены алгоритмов поиска пути без переписывания кода визуализации. Реализована работа с графами любой сложности.</p>
+      </div>
+    </details>
+
+    <p><i>📸 Демонстрация работы:</i></p>
+    <div class="gallery-scroll">
+      <img src="assets/sfml_demo.gif" class="gallery-item" alt="GIF Demo">
+      <img src="assets/cpp_code.png" class="gallery-item" alt="Code Screenshot">
+      <img src="assets/sfml_ui.png" class="gallery-item" alt="Interface">
+    </div>
+
+    <div class="btn-container">
+      <a href="ССЫЛКА_НА_GITHUB_SFML" class="btn btn-github">
+        🐙 Открыть на GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. КУРСОВАЯ 1 (Теория) -->
+  <div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="margin-top:0;">📑 Курсовая работа №1</h2>
+      <span style="font-size:0.9em; color:#666;">Theory • Research • Grade: A</span>
+    </div>
+
+    <p>
+      <b>Тема: "Сравнительные характеристики ETL и ELT при обработке больших данных".</b><br>
+      Фундаментальное исследование подходов к обработке данных. Работа была высоко оценена комиссией СПбГУ (Оценка: Отлично/A).
+    </p>
+
+    <details>
+      <summary>📄 Аннотация работы</summary>
+      <div class="doc-content">
+        <p>Проведен систематический анализ архитектурных паттернов. Обоснована эффективность гибридных подходов в современных облачных средах. Работа послужила теоретической базой для проекта FinBest.</p>
+      </div>
+    </details>
+
+    <div class="btn-container">
+      <a href="ССЫЛКА_НА_ЯНДЕКС_ДИСК_КУРСОВАЯ_1" class="btn btn-yandex">
+        ☁️ Читать на Яндекс.Диске
+      </a>
+    </div>
+  </div>
+
+  <!-- 3. FINBEST (Практика + Курсовая 2) -->
+  <div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="margin-top:0;">🚀 Проект: FinBest</h2>
+      <span style="font-size:0.9em; color:#666;">EtLT • Airflow • Spark</span>
+    </div>
+
+    <p>
+      <b>Практическая реализация Курсовой работы №2.</b><br>
+      Полноценный EtLT-конвейер для финтех-стартапа. Проект решает реальные бизнес-задачи: соблюдение ФЗ-152 (маскирование) и ФЗ-115 (поиск мошенников через графы).
+    </p>
+
+    <!-- Выдержка из курсовой -->
+    <details>
+      <summary>📄 Описание из Курсовой работы (Цель и Задачи)</summary>
+      <div class="doc-content">
+        <p><b>Цель:</b> Продемонстрировать практическую реализацию гибридного подхода EtLT на российских облачных платформах.</p>
+        <p><b>Реализация:</b> Разработан пайплайн, где персональные данные обезличиваются до загрузки в облако, а аналитика проводится внутри DWH с помощью Spark и dbt.</p>
       </div>
     </details>
 
     <!-- Галерея -->
-    <p><i>📸 Галерея реализации (прокрутка вправо):</i></p>
+    <p><i>📸 Галерея реализации (Airflow, Superset, Архитектура):</i></p>
     <div class="gallery-scroll">
-      <img src="assets/architecture_scheme.png" class="gallery-item" alt="Architecture">
-      <img src="assets/airflow_dag.png" class="gallery-item" alt="Airflow DAG">
+      <img src="assets/architecture_scheme.png" class="gallery-item" alt="Схема">
+      <img src="assets/airflow_dag.png" class="gallery-item" alt="Airflow">
       <img src="assets/superset_dashboard.png" class="gallery-item" alt="Superset">
-      <img src="assets/graph_viz.png" class="gallery-item" alt="Graph Viz">
+      <img src="assets/graph_viz.png" class="gallery-item" alt="Граф">
     </div>
 
-    <!-- Интерактив -->
-    <h3>🕸 Анализ связей (Interactive Graph)</h3>
-    <p>Результат работы алгоритма кластеризации (GraphFrames). Граф интерактивен.</p>
+    <!-- Граф -->
+    <h3>🕸 Интерактивный граф (Pyvis)</h3>
+    <p>Результат работы алгоритма кластеризации клиентов. Узлы можно перетаскивать.</p>
     <div class="iframe-box" style="height: 500px;">
       <iframe src="html_exports/pyvis_graph.html" width="100%" height="100%" style="border:none;"></iframe>
     </div>
 
     <!-- Ноутбук -->
     <details>
-      <summary>📓 Показать полный код (Jupyter Notebook)</summary>
-      <div class="iframe-box" style="height: 600px;">
+      <summary>📓 Открыть Ad-Hoc Анализ (Jupyter Notebook)</summary>
+      <div class="iframe-box" style="height: 800px;">
         <iframe src="html_exports/ad_hoc_analysis.html" width="100%" height="100%" style="border:none;"></iframe>
       </div>
     </details>
 
-    <div style="margin-top:20px;">
-      <a href="https://github.com/timurfays/FinBest" class="btn btn-primary">GitHub Repo</a>
-      <a href="ССЫЛКА_НА_КУРСОВУЮ_PDF" class="btn btn-outline" style="margin-left:10px;">Скачать документацию (PDF)</a>
-    </div>
-  </div>
-
-  <!-- 5. ПРОЕКТ 2: МФТИ (Software Engineering) -->
-  <div class="card">
-    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center;">
-      <h2 style="margin-top:0;">🏛 МФТИ: Визуализация алгоритмов</h2>
-      <span style="font-size:0.9em; color:#718096;">C++ • SFML • Design Patterns</span>
-    </div>
-
-    <p>
-      <b>Интерактивная визуализация алгоритма Дейкстры.</b><br>
-      Проект демонстрирует глубокое понимание ООП и паттернов проектирования. Вместо стандартного консольного вывода, создана графическая среда для наблюдения за работой алгоритма в реальном времени.
-    </p>
-
-    <details>
-      <summary>⚙️ Технические детали и Паттерны</summary>
-      <div class="doc-content">
-        <p><b>Архитектура:</b> Использованы порождающие и поведенческие паттерны для гибкой настройки графа.</p>
-        <p><b>Визуализация:</b> Библиотека SFML использована для рендеринга узлов и анимации процесса поиска пути.</p>
-        <p><b>Оптимизация:</b> Эффективная работа с памятью и указателями (C++).</p>
-      </div>
-    </details>
-
-    <div class="gallery-scroll">
-      <img src="assets/sfml_demo.gif" class="gallery-item" alt="SFML Demo">
-      <img src="assets/cpp_code.png" class="gallery-item" alt="Code Snippet">
-      <img src="assets/mipt_photo1.jpg" class="gallery-item" alt="MIPT Campus">
+    <!-- Кнопки -->
+    <div class="btn-container">
+      <a href="https://github.com/timurfays/FinBest" class="btn btn-github">
+        🐙 Открыть код на GitHub
+      </a>
+      <a href="ССЫЛКА_НА_ЯНДЕКС_ДИСК_КУРСОВАЯ_2" class="btn btn-yandex">
+        ☁️ Читать Курсовую №2 (PDF)
+      </a>
     </div>
   </div>
 
   <!-- ПОДВАЛ -->
-  <div style="text-align:center; color:#a0aec0; margin-top:50px; font-size:0.9em;">
-    <p>Готов к решению сложных инженерных задач.</p>
-    <a href="mailto:твоя_почта" style="color:#3182ce; text-decoration:none;">Email</a> • 
-    <a href="https://t.me/твой_ник" style="color:#3182ce; text-decoration:none;">Telegram</a>
+  <div style="text-align:center; margin-top:50px; color:#999; font-size:0.9em;">
+    <p>© 2025 Тимур Файз</p>
   </div>
 
 </div>
